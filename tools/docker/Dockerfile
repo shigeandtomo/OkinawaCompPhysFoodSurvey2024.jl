@@ -33,7 +33,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
 
 USER ${USER}
 
-WORKDIR /workspace/JapaneseFoodSurveys.jl
+WORKDIR /workspace/OkinawaCompPhysFoodSurvey2024.jl
 
 RUN julia -e 'using Pkg; Pkg.add(["Revise", "LiveServer", "Pluto", "PlutoUI"])' && \
     julia -e 'using Pkg; Pkg.add(["BenchmarkTools", "ProfileSVG", "JET", "JuliaFormatter"])'
@@ -41,12 +41,12 @@ RUN julia -e 'using Pkg; Pkg.add(["Revise", "LiveServer", "Pluto", "PlutoUI"])' 
 
 ENV JULIA_PROJECT "@."
 
-COPY ./src /workspace/JapaneseFoodSurveys.jl/src
-COPY ./docs/Project.toml /workspace/JapaneseFoodSurveys.jl/docs
-COPY ./Project.toml /workspace/JapaneseFoodSurveys.jl
+COPY ./src /workspace/OkinawaCompPhysFoodSurvey2024.jl/src
+COPY ./docs/Project.toml /workspace/OkinawaCompPhysFoodSurvey2024.jl/docs
+COPY ./Project.toml /workspace/OkinawaCompPhysFoodSurvey2024.jl
 
 USER root
-RUN chown -R ${NB_UID} /workspace/JapaneseFoodSurveys.jl
+RUN chown -R ${NB_UID} /workspace/OkinawaCompPhysFoodSurvey2024.jl
 USER ${USER}
 
 RUN rm -f Manifest.toml && julia -e 'using Pkg; \

@@ -1,5 +1,5 @@
 ```@meta
-CurrentModule = JapaneseFoodSurveys
+CurrentModule = OkinawaCompPhysFoodSurvey2024
 ```
 
 # API
@@ -8,5 +8,5 @@ CurrentModule = JapaneseFoodSurveys
 ```
 
 ```@autodocs
-Modules = [JapaneseFoodSurveys]
+Modules = [OkinawaCompPhysFoodSurvey2024]
 ```

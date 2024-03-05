@@ -1,7 +1,7 @@
 
-# JapaneseFoodSurveys
+# OkinawaCompPhysFoodSurvey2024
 
-Documentation for [JapaneseFoodSurveys](https://github.com/terasakisatoshi/JapaneseFoodSurveys.jl).
+Documentation for [OkinawaCompPhysFoodSurvey2024](https://github.com/terasakisatoshi/OkinawaCompPhysFoodSurvey2024.jl).
 
 ```@index
 ```
@@ -19,8 +19,8 @@ using ImageShow
 using WordCloud
 using StatsBase
 
-using JapaneseFoodSurveys
-df = JapaneseFoodSurveys.summarize()
+using OkinawaCompPhysFoodSurvey2024
+df = OkinawaCompPhysFoodSurvey2024.summarize()
 words = collect(countmap(df.favorite_food))
 wc_favorite_food = wordcloud(words, fonts=["Juisee HW:style=Regular"])
 generate!(wc_favorite_food)
@@ -37,7 +37,7 @@ using Random
 using ImageShow
 using WordCloud
 
-using JapaneseFoodSurveys
+using OkinawaCompPhysFoodSurvey2024
 
 wc_random = wordcloud( [randstring('a':'z', 10) for _ in 1:1000])
 generate!(wc_random)
