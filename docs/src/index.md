@@ -32,14 +32,12 @@ paint(wc_favorite_food, "wc_favorite_food.svg")
 下記の例はランダムな文字を突っ込んだ例です．人間の皆さん頑張って負けないようにしましょう！
 
 ```@example wc_random
-using Random
+using Random: randstring
 
 using ImageShow
 using WordCloud
 
-using OkinawaCompPhysFoodSurvey2024
-
-wc_random = wordcloud( [randstring('a':'z', 10) for _ in 1:1000])
+wc_random = wordcloud( [randstring('a':'z', 7) for _ in 1:100])
 generate!(wc_random)
 paint(wc_random, "wc_random.svg")
 ```

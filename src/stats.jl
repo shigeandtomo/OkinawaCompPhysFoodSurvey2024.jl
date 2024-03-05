@@ -22,8 +22,14 @@ function summarize(polldir=_polldir())
             @warn "There is a format issue in $(tomlfile) $(e)"
             continue
         end
+
         toml = TOML.parsefile(tomlfile)
-        push!(df, (; favorite_food=string(toml["food"])))
+        if toml["food"] isa String
+            push!(df, (; food=toml["food"]))
+        else
+            toml["food"] isa Vector{String}
+            append!(df, (; food=toml["food"]))
+        end
     end
     df
 end
