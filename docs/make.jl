@@ -27,4 +27,5 @@ makedocs(;
 deploydocs(;
     repo="github.com/AtelierArith/OkinawaCompPhysFoodSurvey2024.jl.git",
     devbranch="main",
+    push_preview=true,
 )
