@@ -34,8 +34,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Create comment
-        with:
         uses: peter-evans/create-or-update-comment@v4
+        with:
           issue-number: ${{ github.event.number }}
           body: |
             Document generation succeeded!
