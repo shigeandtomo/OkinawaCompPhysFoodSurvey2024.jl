@@ -1,0 +1,42 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+  "name": "JapaneseFoodSurveys.jl",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "build": {
+        // Path is relative to the devcontainer.json file.
+        "dockerfile": "../tools/docker/Dockerfile",
+    "context": "../"
+    },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "julialang.language-julia",
+        "tamasfe.even-better-toml",
+        "ms-toolsai.jupyter",
+        "ms-python.python",
+        "mhutchie.git-graph",
+        "ms-python.mypy-type-checker",
+        "wdawson.better-kill-ring",
+        "mushan.vscode-paste-image"
+      ]
+    }
+  },
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // https://github.com/fonsp/Pluto.jl/issues/687
+  // import Pluto; Pluto.run(require_secret_for_access=false, require_secret_for_open_links=false)
+  "forwardPorts": [1234, 8000, 8080, 8888],
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "bash tools/fonts/download_juisee.sh && julia --project -e 'using Pkg; Pkg.instantiate()'",
+
+  // Configure tool-specific properties.
+  // "customizations": {},
+
+  "remoteEnv": {
+    "JULIA_PROJECT": "@."
+  }
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+}
