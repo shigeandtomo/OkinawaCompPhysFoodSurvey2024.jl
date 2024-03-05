@@ -1,7 +1,7 @@
 
 # OkinawaCompPhysFoodSurvey2024
 
-Documentation for [OkinawaCompPhysFoodSurvey2024](https://github.com/terasakisatoshi/OkinawaCompPhysFoodSurvey2024.jl).
+Documentation for [OkinawaCompPhysFoodSurvey2024](https://github.com/atelierarith/OkinawaCompPhysFoodSurvey2024.jl).
 
 ```@index
 ```
