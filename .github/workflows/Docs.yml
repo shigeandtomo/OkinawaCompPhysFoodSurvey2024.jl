@@ -1,0 +1,29 @@
+name: Documentation
+on:
+  push:
+    branches: [main]
+
+    tags: [v*]
+  pull_request:
+jobs:
+  docs:
+    name: Documentation
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      statuses: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: julia-actions/julia-buildpkg@v1
+      - uses: julia-actions/julia-docdeploy@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.number }}
+          body: |
+            Document generation succeeded!
+            Preview site will be available at https://terasakisatoshi.github.io/OkinawaCompPhysFoodSurvey2024.jl/previews/PR${{ github.event.number }} after github-pages deployment🚀
+          token: ${{ secrets.GITHUB_TOKEN }}
