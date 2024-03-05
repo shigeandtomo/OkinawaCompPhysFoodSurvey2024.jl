@@ -24,7 +24,7 @@
         toml = TOML.parsefile(valid_yakiniku)
         toml["food"] == "DragonFruit"
         @test checktomlformat(valid_yakiniku)
-        end
+    end
 
     @testset "checktomlformat Exception" begin
         invalid_tomlfile1 = "references/poll/invalid1/Data.toml"
@@ -36,10 +36,17 @@
         @test_throws TOML.ParserError checktomlformat(invalid_tomlfile2)
 
         invalid_tomlfile3 = "references/poll/invalid3/Data.toml"
-        @test_throws OkinawaCompPhysFoodSurvey2024.DataFormatError(
+        @test_throws DataFormatError(
             "Unexpected key(s) Set([\"unexpectedkey\", \"food\"])",
         ) checktomlformat(
             invalid_tomlfile3,
+        )
+
+        invalid_tomlfile4 = "references/poll/invalid4/Data.toml"
+        @test_throws DataFormatError(
+            "The value for key \"food\" is empty. Please add something.",
+        ) checktomlformat(
+            invalid_tomlfile4,
         )
     end
 end
