@@ -6,13 +6,9 @@ Documentation for [OkinawaCompPhysFoodSurvey2024](https://github.com/terasakisat
 ```@index
 ```
 
-```mermaid
-graph TD
-    A[mermaid.js] --> B[DocumenterMermaid]
-    B --> C[Documenter]
-```
+# 沖縄の食べ物を集めよう
 
-# 好きな食べ物
+今晩のご飯は何を食べようかな？
 
 ```@example wc_food
 using ImageShow
