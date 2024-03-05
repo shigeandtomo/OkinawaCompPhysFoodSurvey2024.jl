@@ -25,13 +25,21 @@ jobs:
         with:
           version: '1'
       - uses: julia-actions/cache@v1
+      - name: Configure Fonts
+        run: |
+          sudo get update && apt-get install fontconfig
+          bash tools/fonts/download_juisee.sh
       - name: Configure doc environment
         shell: julia --project=docs --color=yes {0}
         run: |
           using Pkg
           Pkg.develop(PackageSpec(path=pwd()))
           Pkg.instantiate()
+      - uses: julia-actions/cache@v1
       - uses: julia-actions/julia-buildpkg@v1
+      - uses: julia-actions/julia-docdeploy@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Run doctests
         shell: julia --project=docs --color=yes {0}
         run: |
@@ -45,5 +53,5 @@ jobs:
           issue-number: ${{ github.event.number }}
           body: |
             Document generation succeeded!
-            Preview site will be available at https://terasakisatoshi.github.io/OkinawaCompPhysFoodSurvey2024.jl/previews/PR${{ github.event.number }} after github-pages deployment🚀
+            Preview site will be available at https://atelierarith.github.io/OkinawaCompPhysFoodSurvey2024.jl/previews/PR${{ github.event.number }} after github-pages deployment🚀
           token: ${{ secrets.GITHUB_TOKEN }}

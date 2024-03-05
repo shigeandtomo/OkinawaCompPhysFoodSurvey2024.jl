@@ -23,6 +23,10 @@ jobs:
           - x64
     steps:
       - uses: actions/checkout@v4
+      - name: Configure Fonts
+        run: |
+          sudo get update && apt-get install fontconfig
+          bash tools/fonts/download_juisee.sh
       - uses: julia-actions/setup-julia@v1
         with:
           version: ${{ matrix.version }}
