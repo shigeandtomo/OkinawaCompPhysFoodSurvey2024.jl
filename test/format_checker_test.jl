@@ -19,7 +19,12 @@
         toml = TOML.parsefile(valid_yakiniku)
         toml["food"] == "DragonFruit"
         @test checktomlformat(valid_yakiniku)
-    end
+
+        valid_yakiniku = "references/poll/valid_multiple_values/Data.toml"
+        toml = TOML.parsefile(valid_yakiniku)
+        toml["food"] == "DragonFruit"
+        @test checktomlformat(valid_yakiniku)
+        end
 
     @testset "checktomlformat Exception" begin
         invalid_tomlfile1 = "references/poll/invalid1/Data.toml"

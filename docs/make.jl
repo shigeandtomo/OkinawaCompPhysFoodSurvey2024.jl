@@ -1,20 +1,20 @@
-using JapaneseFoodSurveys
+using OkinawaCompPhysFoodSurvey2024
 using Documenter
 using DocumenterMermaid: DocumenterMermaid
 
 DocMeta.setdocmeta!(
-    JapaneseFoodSurveys,
+    OkinawaCompPhysFoodSurvey2024,
     :DocTestSetup,
-    :(using JapaneseFoodSurveys);
+    :(using OkinawaCompPhysFoodSurvey2024);
     recursive=true,
 )
 
 makedocs(;
-    modules=[JapaneseFoodSurveys],
+    modules=[OkinawaCompPhysFoodSurvey2024],
     authors="Satoshi Terasaki <terasakisatoshi.math@gmail.com> and contributors",
-    sitename="JapaneseFoodSurveys.jl",
+    sitename="OkinawaCompPhysFoodSurvey2024.jl",
     format=Documenter.HTML(;
-        canonical="https://terasakisatoshi.github.io/JapaneseFoodSurveys.jl",
+        canonical="https://terasakisatoshi.github.io/OkinawaCompPhysFoodSurvey2024.jl",
         edit_link="main",
         assets=String[],
     ),
@@ -25,6 +25,6 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/terasakisatoshi/JapaneseFoodSurveys.jl",
+    repo="github.com/terasakisatoshi/OkinawaCompPhysFoodSurvey2024.jl",
     devbranch="main",
 )
