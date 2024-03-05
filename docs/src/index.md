@@ -21,7 +21,7 @@ using StatsBase
 
 using OkinawaCompPhysFoodSurvey2024
 df = OkinawaCompPhysFoodSurvey2024.summarize()
-words = collect(countmap(df.favorite_food))
+words = collect(countmap(df.food))
 wc_favorite_food = wordcloud(words, fonts=["Juisee HW:style=Regular"])
 generate!(wc_favorite_food)
 paint(wc_favorite_food, "wc_favorite_food.svg")

@@ -35,7 +35,7 @@ function interactive(; githubuser::Union{String,Nothing}=nothing)
         tomlfile = joinpath(userworkspace, "Data.toml")
         food = INTERACTIVE_OKINAWA_FOOD_OPTIONS[choice]
         open(tomlfile, "w") do io
-            TOML.print(io, Dict(:favorite_food => String[food]))
+            TOML.print(io, Dict(:food => String[food]))
         end
         @info "tomlfile=$tomlfile has been created"
     catch e
