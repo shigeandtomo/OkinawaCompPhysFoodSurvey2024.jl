@@ -14,7 +14,7 @@ makedocs(;
     authors="Satoshi Terasaki <terasakisatoshi.math@gmail.com> and contributors",
     sitename="OkinawaCompPhysFoodSurvey2024.jl",
     format=Documenter.HTML(;
-        canonical="https://terasakisatoshi.github.io/OkinawaCompPhysFoodSurvey2024.jl",
+        canonical="https://atelierarith.github.io/OkinawaCompPhysFoodSurvey2024.jl",
         edit_link="main",
         assets=String[],
     ),
@@ -25,6 +25,6 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/terasakisatoshi/OkinawaCompPhysFoodSurvey2024.jl",
+    repo="github.com/AtelierArith/OkinawaCompPhysFoodSurvey2024.jl.git",
     devbranch="main",
 )
