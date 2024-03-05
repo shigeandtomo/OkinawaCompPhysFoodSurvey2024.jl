@@ -53,5 +53,5 @@ jobs:
           issue-number: ${{ github.event.number }}
           body: |
             Document generation succeeded!
-            Preview site will be available at https://terasakisatoshi.github.io/OkinawaCompPhysFoodSurvey2024.jl/previews/PR${{ github.event.number }} after github-pages deployment🚀
+            Preview site will be available at https://atelierarith.github.io/OkinawaCompPhysFoodSurvey2024.jl/previews/PR${{ github.event.number }} after github-pages deployment🚀
           token: ${{ secrets.GITHUB_TOKEN }}
