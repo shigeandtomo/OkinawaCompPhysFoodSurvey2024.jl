@@ -23,8 +23,7 @@ function summarize(polldir=_polldir())
         toml = TOML.parsefile(tomlfile)
         if toml["food"] isa String
             push!(df.food, toml["food"]))
-        else
-            toml["food"] isa Vector{String}
+        elseif toml["food"] isa Vector{String}
             append!(df.food, toml["food"]))
         end
     end
