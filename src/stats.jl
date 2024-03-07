@@ -9,10 +9,7 @@ end
 
 function summarize(polldir=_polldir())
     dirs = filter(p -> isdir(p), readdir(polldir, join=true))
-
-    df = DataFrame(
-        :food => String[],
-    )
+    df = (; food=String[])
 
     for d in dirs
         tomlfile = joinpath(d, "food", "Data.toml")
@@ -25,10 +22,10 @@ function summarize(polldir=_polldir())
 
         toml = TOML.parsefile(tomlfile)
         if toml["food"] isa String
-            push!(df, (; food=toml["food"]))
+            push!(df.food, toml["food"]))
         else
             toml["food"] isa Vector{String}
-            append!(df, (; food=toml["food"]))
+            append!(df.food, toml["food"]))
         end
     end
     df
