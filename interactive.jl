@@ -46,7 +46,4 @@ function interactive(; githubuser::Union{String,Nothing}=nothing)
     end
 end
 
-
 interactive()
-
-

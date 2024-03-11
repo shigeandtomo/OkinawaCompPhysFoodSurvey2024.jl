@@ -28,17 +28,3 @@ function check(; githubuser::Union{String,Nothing}=nothing)
 end
 
 check()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
