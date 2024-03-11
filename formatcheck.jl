@@ -1,5 +1,3 @@
-
-
 using LibGit2
 using REPL.TerminalMenus
 using TOML
