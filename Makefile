@@ -24,3 +24,12 @@ clean:
 	-rm -rf docs/build
 	-rm -rf Juisee_HW_v0.0.6 Juisee_HW_v0.0.6.zip
 	-rm -rf tools/fonts/Juisee_HW_v0.0.6 tools/fonts/Juisee_HW_v0.0.6.zip
+
+
+.PHONY: release
+release: clean
+	julia --project=docs -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate(); \
+		include("docs/make.jl"); \
+		'
+	zip -r Juisee_HW_v0.0.6.zip Juisee_HW_v0.0.6
+	mv Juisee_HW_v0.0.6.zip tools/fonts
