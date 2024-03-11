@@ -1,3 +1,5 @@
+
+
 using LibGit2
 using REPL.TerminalMenus
 using TOML
@@ -25,4 +27,18 @@ function check(; githubuser::Union{String,Nothing}=nothing)
     @info "Your tomlfile=$tomlfile is valid. Go on to the next step"
 end
 
-check()
+check(githubuser="shomait")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
