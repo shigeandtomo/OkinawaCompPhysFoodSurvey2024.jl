@@ -4,7 +4,7 @@ using TOML
 
 using OkinawaCompPhysFoodSurvey2024: OkinawaFood, checktomlformat
 
-default_githubuser() = LibGit2.getconfig("github.user", "")
+default_githubuser() = LibGit2.getconfig(".", "github.user", "")
 
 struct MissingUserException <: Exception end
 function Base.showerror(io::IO, ::MissingUserException)
