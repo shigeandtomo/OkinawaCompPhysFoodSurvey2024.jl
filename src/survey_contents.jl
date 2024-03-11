@@ -1,4 +1,4 @@
-const INTERACTIVE_OKINAWA_FOOD_OPTIONS = ["沖縄そば", "ヤギの刺身", "ミミガー", "黒糖"]
+const INTERACTIVE_OKINAWA_FOOD_OPTIONS = ["沖縄そば", "ヤギの刺身", "ミミガー", "黒糖", "海ぶどう"]
 
 struct OkinawaFood end
 

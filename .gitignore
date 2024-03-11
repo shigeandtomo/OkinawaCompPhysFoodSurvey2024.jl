@@ -160,3 +160,6 @@ cython_debug/
 #.idea/
 
 docs/Manifest.toml
+
+# VS Code settings
+.vscode/
