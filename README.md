@@ -23,3 +23,13 @@ Please refer to those [instructions](https://github.com/AtelierArith/OkinawaComp
 ## 進捗状況
 
 ![wc_favorite_food.svg](https://atelierarith.github.io/OkinawaCompPhysFoodSurvey2024.jl/dev/wc_favorite_food.svg)
+
+## トラブルシューティング
+
+### Github usernameが設定されていない
+
+> ERROR: LoadError: Git hosting service username is required, set one with keyword `githubuser="<YourGitHubUserName>"`
+
+が出る場合。以下を設定すると解決します。
+
+> $ git config github.user <your-gh-name>
